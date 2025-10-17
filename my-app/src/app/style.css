@@ -1,0 +1,106 @@
+:root {
+  --pm-red: #f04235;
+  --pm-yellow: #ffd300;
+  --pm-ink: #121212;
+  --pm-muted: #6c757d;
+}
+
+/* Optional: ensure full-bleed layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header + Search */
+.popmart .top-notice { background: #f8f9fa; }
+
+.header-bar .search-wrap {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+}
+.header-bar .search-wrap i { opacity: 0.7; }
+
+/* Hero */
+.hero { position: relative; min-height: 560px; }
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: url("/skullpanda_background.jpg") center/cover no-repeat;
+  filter: brightness(0.82) saturate(0.95);
+  z-index: 0;
+}
+
+/* REMOVED the yellow overlay
+.hero::after { ... }
+*/
+
+.hero .hero-inner { position: relative; z-index: 2; gap: 2rem; min-height: 560px; }
+.hero .hero-copy { max-width: 680px; }
+.hero .brand .brand-pop { background: var(--pm-red) !important; }
+.hero .pill {
+  display: inline-block;
+  background: #1c2e38; color: #fff;
+  padding: 0.5rem 0.9rem; border-radius: 999px;
+}
+.hero-dots { position: absolute; left: 0; right: 0; bottom: 16px; z-index: 2; }
+.hero-dots span {
+  width: 48px; height: 4px; border-radius: 999px;
+  background: #e0e0e0; display: inline-block;
+}
+.hero-dots span:first-child { background: #c1c1c1; }
+
+@media (max-width: 991.98px) {
+  .hero .hero-inner { flex-direction: column; text-align: center; justify-content: center; }
+  .hero .hero-copy { margin-inline: auto; }
+}
+
+/* Footer */
+.site-footer { background: #0e0e0f; color: #e9ecef; }
+.site-footer a { color: #e9ecef; text-decoration: none; }
+.site-footer a:hover { opacity: 0.85; }
+.site-footer .divider { height: 1px; background: rgba(255,255,255,0.08); }
+.site-footer .first-row { border-bottom: 0; }
+.site-footer .social .icon { font-size: 1.25rem; opacity: .9; }
+.site-footer .badge-link {
+  background: #1b1b1c; padding: .6rem .9rem;
+  border-radius: .5rem; font-size: .9rem;
+}
+.site-footer .newsletter input {
+  background: #1b1b1c; border: 1px solid rgba(255,255,255,.12);
+  color: #e9ecef;
+}
+.site-footer .newsletter input::placeholder { color: #a8b0b9; }
+.site-footer .contact-tile {
+  background: #111113; border: 1px solid rgba(255,255,255,.06);
+  border-radius: .5rem; position: relative;
+}
+.site-footer .column .title { font-weight: 600; margin-bottom: .5rem; }
+.site-footer .column ul {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: .35rem;
+}
+.site-footer .pay-icons i { opacity: .8; }
+
+/* Footer horizontal layout */
+.footer-links {
+  flex-wrap: nowrap !important;      /* keep one line */
+  overflow-x: auto;                  /* horizontal scroll if too tight */
+  gap: 4rem;                         /* spacing between columns */
+  scrollbar-width: none;             /* hide scrollbar (Firefox) */
+}
+.footer-links::-webkit-scrollbar { display: none; } /* hide scrollbar (WebKit) */
+
+.footer-col { min-width: 160px; }    /* prevent columns from collapsing */
+
+.footer-col ul li { line-height: 1.8; }
+
+.footer-col a {
+  color: #e9ecef;
+  text-decoration: none;
+}
+.footer-col a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
